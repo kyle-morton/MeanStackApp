@@ -10,16 +10,17 @@ var morgan = require('morgan'); // used to see requests
 var mongoose = require('mongoose'); // for working w/ our database
 var port = process.env.PORT || 8080; // set the port for our app
 var User = require('./models/user');
+var config = require('./config');
 
 //Get JSON web token package
 var jwt = require('jsonwebtoken');
 
 //create secret (SALT) to create tokens with 
-var superSecret = 'ilovescotchscotchyscotchscotch';
+//var superSecret = 'ilovescotchscotchyscotchscotch';
 
 
 //connect to our database (hosted by mongolabs)
-mongoose.connect('kyle:oagland@ds041992.mongolab.com:41992/meanmongo');
+mongoose.connect(config.database);
 
 // APP CONFIGURATION ---------------------
 // use body parser so we can grab information from POST requests
@@ -271,5 +272,5 @@ app.use('/api', apiRouter);
 
 // START THE SERVER
 // ===============================
-app.listen(port);
-console.log('Magic happens on port ' + port);
+app.listen(config.port);
+console.log('Magic happens on port ' + config.port);
