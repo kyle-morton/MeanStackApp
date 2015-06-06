@@ -39,7 +39,7 @@ module.exports = function(app, express) {
 				success: false,
 				message: 'Authentication failed. Wrong password.'
 				});
-			} 
+			}
 			//passed authentication
 			else {
 				// if user is found and password is right
@@ -79,7 +79,7 @@ module.exports = function(app, express) {
 		console.log("req header: " + req.headers['x-access-token']);
 
 		// check header or url parameters or post parameters for token
-		var token = req.body.token || req.query.token 
+		var token = req.body.token || req.query.token
 				|| req.headers['x-access-token'];
 
 		console.log("TOKEN: " + token);
@@ -100,7 +100,7 @@ module.exports = function(app, express) {
 					next();
 				}
 			});
-		} 
+		}
 
 		else {
 		// if there is no token
@@ -176,7 +176,7 @@ module.exports = function(app, express) {
 			});
 		})
 
-		
+
 
 		// update the user with this id
 		// (accessed at PUT http://localhost:8080/api/users/:user_id)
@@ -202,7 +202,7 @@ module.exports = function(app, express) {
 					});
 				}
 
-				
+
 			});
 		})
 
@@ -219,5 +219,7 @@ module.exports = function(app, express) {
 	apiRouter.get('/me', function(req, res) {
 		res.send(req.decoded);
 	});
+
+	return apiRouter;
 
 }
