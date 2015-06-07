@@ -1,10 +1,10 @@
 main 					{
-	padding-top:30px;	
+	padding-top:30px;
 }
 
-/* HEADER 
+/* HEADER
 ===================== */
-header .navbar 		{ 
+header .navbar 		{
 	border-radius:0;
 }
 
@@ -37,6 +37,27 @@ header .navbar 		{
 }
 
 @-moz-keyframes spin {
-	from 	{ -moz-transform:rotate(0deg); }	
+	from 	{ -moz-transform:rotate(0deg); }
 	to 	{ -moz-transform:rotate(360deg); }
+}
+
+.reveal-animation.ng-enter, .reveal-animation.ng-leave {
+  -webkit-transition:1s linear all;
+  transition:1s linear all;
+}
+
+.reveal-animation.ng-enter {
+  opacity: 0;
+}
+
+.reveal-animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.reveal-animation.ng-leave {
+  opacity: 1;
+}
+
+.reveal-animation.ng-leave.ng-leave-active {
+  opacity: 0;
 }

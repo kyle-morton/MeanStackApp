@@ -7,6 +7,15 @@
 		<p><a href="#" ng-click="login.createSample()" class="btn btn-sm btn-primary">Create Sample User</a></p>
 	</div>
 
+	<div class="alert alert-success reveal-animation" role="alert" ng-if="login.createSample === true">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"
+			ng-click="login.dismissSampleMessage()">
+			<span aria-hidden="true">&times;</span></button>
+		Successfully Created Sample User!</div>
+
+
+
+
 	<div class="jumbotron">
 		<h1>Login</h1>
 
